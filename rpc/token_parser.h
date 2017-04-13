@@ -5,7 +5,6 @@
 #include <iostream>
 #include <boost/archive/text_iarchive.hpp>
 
-
 namespace rpc
 {
 	class token_parser

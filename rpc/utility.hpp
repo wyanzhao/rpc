@@ -15,7 +15,7 @@ namespace rpc
 	}
 
 	template<typename T>
-	static inline void encode(T t, std::stringstream & ss, boost::archive::text_oarchive & oa)
+	inline void encode(T t, std::stringstream & ss, boost::archive::text_oarchive & oa)
 	{
 		oa << t;
 	}

@@ -15,6 +15,7 @@ struct messager
 	{
 		std::string temp = orignal;
 		for (auto & c : temp) c = toupper(c);
+		cout << temp << endl;;
 		return temp;
 	}
 };

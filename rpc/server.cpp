@@ -29,14 +29,15 @@ void rpc::server::do_accept()
 	
 	acceptor_.async_accept(conn_->socket(), [this](boost::system::error_code ec)
 	{
-		if (ec)
+		if (!ec)
 		{
-			//todo log
-			std::cerr << "error code is " << ec << std::endl;
+			
+			conn_->start();
+			
 		}
 		else
-		{
-			conn_->start();
+		{//todo log
+			std::cerr << "do_accept failed " << ec << std::endl;
 		}
 
 		do_accept();

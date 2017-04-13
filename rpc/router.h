@@ -1,10 +1,10 @@
 #pragma once
-
 #include <boost/noncopyable.hpp>
 #include <utility>
 #include <string>
 #include <map>
 #include <mutex>
+
 #include "function_traits.hpp"
 #include "token_parser.h"
 #include "common.h"

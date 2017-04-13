@@ -45,7 +45,7 @@ void rpc::connection::read_head()
 		{
 			//log
 			std::cerr << "read message error" << std::endl;
-			cancel_timer();
+			return;
 		}
 	});
 }
@@ -80,16 +80,18 @@ void rpc::connection::response(const char * json_str)
 	auto len = strlen(json_str);
 	message_[0] = boost::asio::buffer(&len, 4);
 	message_[1] = boost::asio::buffer((char*)json_str, len);
+
 	boost::asio::async_write(socket_, message_, [this, self](boost::system::error_code ec, std::size_t length)
 	{
 		if (!ec)
 		{
-			//read_head();
+			read_head();
 		}
 		else
 		{
 			//log
-			std::cerr << "send message error\n";
+			std::cout << "client offline\n";
+			close();
 			return;
 		}
 	});
