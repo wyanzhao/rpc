@@ -51,11 +51,11 @@ int main()
 	thread t(io_thread);
 	t.detach();
 
-	async();
+	sync();
 	Sleep(1000);
-	async();
+	sync();
 	Sleep(1000);
-	async();
+	sync();
 		
 	getchar();
 	return 0;

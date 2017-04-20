@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpc", "rpc\rpc.vcxproj", "{4D6D53B1-3026-415E-A80E-082EAA84405E}"
 EndProject
@@ -11,6 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpc_client_test", "rpc_clie
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpc_server_test", "rpc_server_test\rpc_test.vcxproj", "{6ABFE92A-752F-4E86-B05E-9516205F369C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D6D53B1-3026-415E-A80E-082EAA84405E} = {4D6D53B1-3026-415E-A80E-082EAA84405E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
